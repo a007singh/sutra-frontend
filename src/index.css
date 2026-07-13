@@ -1,0 +1,75 @@
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+:root {
+  --bg-base: #0A0B0F;
+  --bg-surface: #111318;
+  --bg-elevated: #16181F;
+  --bg-overlay: #1C1E27;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.14);
+  --accent: #00C896;
+  --accent-dim: rgba(0,200,150,0.12);
+  --accent-hover: #00E0AA;
+  --text-primary: #F0F1F5;
+  --text-secondary: #8B8FA8;
+  --text-muted: #4A4D60;
+  --status-running: #3B9EFF;
+  --status-running-dim: rgba(59,158,255,0.12);
+  --status-done: #00C896;
+  --status-done-dim: rgba(0,200,150,0.12);
+  --status-failed: #FF5C5C;
+  --status-failed-dim: rgba(255,92,92,0.12);
+  --status-waiting: #FFB547;
+  --status-waiting-dim: rgba(255,181,71,0.12);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --sidebar-w: 220px;
+  --font: 'Geist Variable', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+@layer base {
+  * { border-color: var(--border); }
+  body { background-color: var(--bg-base); color: var(--text-primary); }
+  html { font-family: var(--font); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+[data-theme="light"] {
+  --bg-base: #F5F6F8;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --bg-overlay: #F0F1F5;
+  --border: rgba(0,0,0,0.08);
+  --border-hover: rgba(0,0,0,0.15);
+  --text-primary: #0D0F14;
+  --text-secondary: #5A5F7A;
+  --text-muted: #9CA3B8;
+  --accent-dim: rgba(0,180,130,0.1);
+}
